@@ -124,7 +124,7 @@
                                 <a class="help nav-link" href="/help">HELP</a>
                             </li>
                         </div>
-                        @guest()
+                        @guest
                             <div class="container">
                                 <li class="nav-item">
                                     <a class="signin nav-link" href="/signin">Login</a>

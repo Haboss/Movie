@@ -80,25 +80,27 @@ class UserController extends Controller
             'age.min'                        => 'Regisztráció csak 18 év felett!'
         ]);
 
-        $data             = new felhasznaloModel;
-        $data -> teljesnev     = $request->name;
-        $data -> felhasznalonev = $request->username;
-        $data -> email    = $request->email;
-        $data -> kor      = $request->age;
-        $data -> password = Hash::make($request->password);
-        $data -> admin = "felhasznalo";
-        $data -> rang = "ujonc";
-        $data -> ertekeloszamlalo = 0;
+        $data                     = new felhasznaloModel;
+        $data -> teljesnev        = $request->name;
+        $data -> felhasznalonev   = $request->username;
+        $data -> email            = $request->email;
+        $data -> szuldatum        = $request->age;
+        $data -> jelszo           = Hash::make($request->password);
+        $data -> admin            = "felhasznalo";
+        $data -> rangid           = 1;
         $data -> Save();
 
         // $userid = felhaszanaloModel::find($data->id);
         // Auth::loginUsingId($userid);
-        //return redirect('/');
-
-
-        /*if(Auth::attempt(['felhasznalonev' => $request->username, 'password' => $request->password])){
+        /* if(Auth::attempt($auth)){
             return redirect('/');
-        }*/
+        } */
+
+
+
+        if(Auth::attempt(['felhasznalonev' => $request->username, 'password' => $request->password])){
+            return redirect('/');
+        }
     }
 
 }

@@ -82,100 +82,95 @@
         </div>
     </div>
 
- <div id="@yield('bg')" style="background-image: url(@yield('bg-name'))">
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-            <div class="container-fluid">
-                <a class="logo navbar-brand" href="/">
-                    <img class="logoka" src="{{asset("assets/img/logok/logo.png")}}">
-                </a>
-                <!-- mobil -->
-                <div class="toggle-container d-flex justify-content-center align-items-center d-lg-none">
-                    <button class="navbar-toggler collapse d-flex flex-column justify-content-around collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="toggler-icon top-bar"></span>
-                        <span class="toggler-icon middle-bar"></span>
-                        <span class="toggler-icon bottom-bar"></span>
-                    </button>
-                </div>
-                <!-- mobil -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="home" href="/">HOME</a>
-                            </li>
-                        </div>
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="movies" href="/movie">MOVIES</a>
-                            </li>
-                        </div>
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="celebrities" href="/actor">ACTORS</a>
-                            </li>
-                        </div>
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="celebrities" href="/category">CATEGORY</a>
-                            </li>
-                        </div>
-                    </ul>
-                    <ul class="navbar-nav ms-auto navmobil">
-                        @guest
+    <div id="@yield('bg')" style="background-image: url(@yield('bg-name'))">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary container">
+                <div class="container-fluid">
+                    <a class="logo navbar-brand" href="/">
+                        <img class="logoka" src="{{asset("assets/img/logok/logo.png")}}">
+                    </a>
+                    <!-- mobil -->
+                    <div class="toggle-container d-flex justify-content-center align-items-center d-lg-none">
+                        <button class="navbar-toggler collapse d-flex flex-column justify-content-around collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon top-bar"></span>
+                            <span class="toggler-icon middle-bar"></span>
+                            <span class="toggler-icon bottom-bar"></span>
+                        </button>
+                    </div>
+                    <!-- mobil -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
                             <div class="container">
                                 <li class="nav-item">
-                                    <a class="signin nav-link" href="/login">Login</a>
+                                    <a class="home" href="/">HOME</a>
                                 </li>
                             </div>
                             <div class="container">
                                 <li class="nav-item">
-                                    <button class="btn btn-singup px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">SIGN UP
-                                        <i class="bi bi-person-circle"></i>
+                                    <a class="movies" href="/movie">MOVIES</a>
+                                </li>
+                            </div>
+                            <div class="container">
+                                <li class="nav-item">
+                                    <a class="celebrities" href="/actor">ACTORS</a>
+                                </li>
+                            </div>
+                        </ul>
+                        <ul class="navbar-nav ms-auto navmobil">
+                            @guest
+                                <div class="container">
+                                    <li class="nav-item">
+                                        <a class="signin nav-link" href="/login">Login</a>
+                                    </li>
+                                </div>
+                                <div class="container">
+                                    <li class="nav-item">
+                                        <button class="btn btn-singup px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">SIGN UP
+                                            <i class="bi bi-person-circle"></i>
+                                        </button>
+                                    </li>
+                                </div>
+                            @else
+                            <div class="container">
+                                <li class="nav-item">
+                                    <a class="celebrities" href="/profil">Profil</a>
+                                </li>
+                            </div>
+                            <div class="container">
+                                <li class="nav-item">
+                                    <button class="btn btn-singup px-3">
+                                        <a class="logout" href="/logout">Logout</a>
                                     </button>
                                 </li>
                             </div>
-                        @else
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="celebrities" href="/profil">Profil</a>
-                            </li>
-                        </div>
-                        <div class="container">
-                            <li class="nav-item">
-                                <button class="btn btn-singup px-3">
-                                    <a class="logout" href="/logout">Logout</a>
-                                </button>
-                            </li>
-                        </div>
-                        @endguest
-                    </ul>
+                            @endguest
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    @yield('content')
- </div>
+            </nav>
+        </header>
+        @yield('content')
+    </div>
     @yield('content2')
-
     <footer class="footer">
         <div class="container">
-     <div class="row">
-       <div class="footer-col">
-         <ul>
-            <a class="logo navbar-brand" href="/">
-                <img class="logoka pb-3" src="{{asset('assets/img/logok/logo.png')}}">
-            </a>
-            <li>Budapest, Üteg u. 15, 1139</li>
-            <li>Call us: 06(12)345 6789</li>
-        </ul>
-    </div>
-    <div class="footer-col">
-        <h4>About us</h4>
-    </div>
-</div>
-</div>
-</footer><script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+            <div class="row">
+                <div class="footer-col">
+                    <ul>
+                        <a class="logo navbar-brand" href="/">
+                            <img class="logoka pb-3" src="{{asset('assets/img/logok/logo.png')}}">
+                        </a>
+                        <li>Budapest, Üteg u. 15, 1139</li>
+                        <li>Call us: 06(12)345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About us</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="{{asset('slick-1.8.1/slick/slick.min.js')}}"></script>
 <script src="{{asset('assets/js/myslick.js')}}"></script>

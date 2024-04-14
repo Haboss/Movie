@@ -40,6 +40,7 @@ class UserController extends Controller
             return view('profil',[
                 "hatter" => felhasznaloModel::select('hatterek.nev as hatter_nev')
                 ->join('hatterek', 'felhasznalo.hatterid', '=', 'hatterek.id')
+                ->where('felhasznalo.id', Auth::user()->id )
                 ->first()->hatter_nev,
                 'result' => felhasznaloModel::select('id','name','username','password','email','age','rangid')
                 ->where('id',Auth::user()->id)
@@ -79,6 +80,7 @@ class UserController extends Controller
                 ->get(),
                 "hatter" => felhasznaloModel::select('hatterek.nev as hatter_nev')
                 ->join('hatterek', 'felhasznalo.hatterid', '=', 'hatterek.id')
+                ->where('felhasznalo.id', Auth::user()->id )
                 ->first()->hatter_nev,
         ]);
     }

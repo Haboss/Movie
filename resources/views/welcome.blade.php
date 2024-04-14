@@ -86,7 +86,7 @@
         <div class="categ row">
             <div class="col-8">
                 <h1 class="pt-5">New Movies</h1>
-                <div class="categ row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
+                <div class="categ row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 container">
                     <div class="filmek cols">
                         <img class="filmkep img-fluid" src="{{asset("assets/img/movies/film13.png")}}">
                         <div class="filmkep_overlay">
@@ -109,8 +109,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="categ row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
                     <div class="filmek cols">
                         <img class="filmkep img-fluid" src="{{asset("assets/img/movies/film15.png")}}">
                         <div class="filmkep_overlay">
@@ -139,7 +137,7 @@
                 <h1 class="pt-5">Actors</h1>
                 <div class="my-2">
                     <div class="p-2 row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
-                        <div class="cols p-0">
+                        <div class="cols mt-5">
                             <img class="actor img-fluid w-50" src="{{asset("assets/img/actors/actor3.png")}}" alt="actor3.png" title="Ryan Gosling">
                         </div>
                         <div class="cols d-flex justify-content-center align-items-center">
@@ -149,7 +147,7 @@
                 </div>
                 <div class="my-2">
                     <div class="p-2 row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
-                        <div class="cols p-0">
+                        <div class="cols mt-3">
                             <img class="actor img-fluid w-50" src="{{asset("assets/img/actors/actor8.png")}}" alt="actor8.png" title="Taika Waititi">
                         </div>
                         <div class="cols d-flex justify-content-center align-items-center">
@@ -158,7 +156,7 @@
                 </div>
                 <div class="my-2">
                     <div class="p-2 row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
-                        <div class="cols p-0">
+                        <div class="cols mt-3">
                             <img class="actor img-fluid w-50" src="{{asset("assets/img/actors/actor2.png")}}" alt="actor2.png" title="Brad Pitt">
                         </div>
                         <div class="cols d-flex justify-content-center align-items-center">
@@ -167,7 +165,7 @@
                 </div>
                 <div class="my-2">
                     <div class="p-2 row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
-                        <div class="cols p-0">
+                        <div class="cols mt-3">
                             <img class="actor img-fluid w-50" src="{{asset("assets/img/actors/actor6.png")}}" alt="actor6.png" title="Robert Pattinson">
                         </div>
                         <div class="cols d-flex justify-content-center align-items-center">
@@ -178,8 +176,20 @@
             </div>
         </div>
     </div>
-          <div class="ratio ratio-16x9 w-50">
-			<iframe src="https://www.youtube.com/embed/TqtW4YcvKbU?si=G9TF6OAtPyVloLV1" title="YouTube video player" allowfullscreen></iframe>
+    <h1 class="py-5">Trailer</h1>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
+                <div class="col p-4">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/TqtW4YcvKbU?si=G9TF6OAtPyVloLV1" title="YouTube video player" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col p-4">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/AMwJ4a9ny7k?si=Lc-My5D3bv2zHWXG" title="YouTube video player" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
           </div>
 </section>
 </body>

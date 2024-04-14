@@ -38,32 +38,18 @@ footer {
     background-color: #050d1f;
 }
 
-.insta {
-    width: 7.4rem;
-    height: 7.4rem;
-    object-fit: cover;
-    vertical-align: top;
-    flex-shrink: 0;
+.movieka{
+    color: white;
+    text-shadow: 3px 3px #03A4FE;
+    font-weight: bold;
+    font-size: 100px;
 }
 
-.x {
-    margin-right: 2.9rem;
-    width: 7.2rem;
-    height: 6.9rem;
-    object-fit: cover;
-    vertical-align: top;
-    flex-shrink: 0;
+.profilka{
+    color: 03A4FE;
+    text-shadow: 1px 1px white;
+    font-weight: bold;
 }
-
-.face {
-    margin-right: 2.9rem;
-    width: 7.2rem;
-    height: 7.3rem;
-    object-fit: cover;
-    vertical-align: top;
-    flex-shrink: 0;
-}
-
 body {
     background-color: black;
     min-height: 100dvh;
@@ -552,13 +538,6 @@ ul{
     width: 100%;
   }
 
-
-
-
-.categ{
-    padding-right: 20px;
-    position: relative;
-}
 
 @media (max-width: 992px) {
 

@@ -84,24 +84,21 @@
                         </div>
                         <div class="container">
                             <li class="nav-item">
-                                <a class="celebrities" href="/celebrity">CELEBRITIES</a>
+                                <a class="celebrities" href="/actor">ACTORS</a>
                             </li>
                         </div>
-                        <!--<div class="container">
+                        <div class="container">
                             <li class="nav-item">
-                                <a class="community" href="/community">COMMUNITY</a>
+                                <a class="celebrities" href="/category">CATEGORY</a>
                             </li>
-                        </div>-->
+                        </div>
                     </ul>
                     <ul class="navbar-nav ms-auto navmobil">
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="help nav-link" href="/help">HELP</a>
-                            </li>
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="signin nav-link" href="/signin">SIGN IN</a>
-                            </li>
+                            <div class="container">
+                                <li class="nav-item">
+                                    <a class="signin nav-link" href="/login">Login</a>
+                                </li>
+                            </div>
                         <div class="container">
                             <li class="nav-item">
                                 <button class="btn btn-singup px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">SIGN UP
@@ -147,3 +144,6 @@
         </div>
     </div>
 </section>
+</body>
+</html>
+

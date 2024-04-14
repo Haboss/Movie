@@ -69,15 +69,26 @@ body {
     min-height: 100dvh;
 }
 
+main {
+    min-height: 100dvh;
+}
+
 #background {
-    background-image: url("../img/bgimg1.png");
+    background-image: url("../img/homebg.png");
     background-size: cover;
     background-position: center center;
     height: 80vh;
 }
 
+#background1 {
+    background-image: url("../img/profilbg.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100dvh;
+}
+
 #background2 {
-    background-image: url("../img/bgimg2.png");
+    background-image: url("../img/moviebg.png");
     background-size: cover;
     background-position: center center;
     height: 80vh;
@@ -85,7 +96,15 @@ body {
 }
 
 #background3 {
-    background-image: url("../img/bgimg3.png");
+    background-image: url("../img/celebritesbg.png");
+    background-size: cover;
+    background-position: center center;
+    height: 80vh;
+    background-color: #00000057;
+}
+
+#background4 {
+    background-image: url("../img/categorybg.png");
     background-size: cover;
     background-position: center center;
     height: 80vh;
@@ -95,11 +114,29 @@ body {
 .form-control {
     background-color: #03A4FE !important;
     border: none;
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .form-control::placeholder {
     color: rgb(192, 192, 192);
+}
+
+.mysection{
+    width: 100%;
+    margin-bottom: 15px;
+    backdrop-filter: brightness(25%);
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.mysection .row{
+    /* background-color: rgba(1, 1, 1, 0.5); */
+    width: 100%;
+    padding: 15px;
+}
+
+.mysection .row p{
+    font-size: 1.3rem;
 }
 
 .search{
@@ -133,6 +170,10 @@ input:-webkit-autofill:active{
     width: 70px
 }
 
+.logout:hover{
+    color: white !important;
+}
+
 .navbar{
     padding-top: 2%;
 }
@@ -150,20 +191,26 @@ nav .ms-auto .container{
     width: fit-content;
 }
 
-nav .btn-singup{
+nav .btn-singup,.btn-profil{
     background-color: #03A4FE;
     color: white;
     border-radius: 15px;
+    transition: 0.3s;
 }
 
-nav .btn-singup i{
-    margin-left: 5px;
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }
 
-nav .btn-singup:hover{
+nav .btn-singup:hover,.btn-profil:hover{
     background-color: #03A4FE;
     color: white;
     filter: drop-shadow(0px 0px 5px #03A4FE);
+}
+
+.login{
+    min-height: 100dvh;
 }
 
 nav .btn-singup:active{
@@ -230,29 +277,44 @@ div label{
 .filmkep{
     display: block;
     width: 100%;
+    border-radius: 5px;
 }
 
 .filmkep_overlay{
+    box-sizing: calc(526px, 296px);
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 526px;
+    max-width: 100%;
+    height: 296px;
+    max-height: 100%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.25s;
+    transition: opacity 0.3s;
+    text-shadow: black 2px 2px;
+}
+
+.filmkep_overlay:hover{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%);
+    border-radius: 5px;
 }
 
 .filmkep_cim{
     font-size: 2em;
     font-weight: bold;
+    max-width: 90%;
 }
 
 .filmkep_leiras{
     font-size: 1.25em;
+}
+
+.filmkep_overlay:hover{
+    opacity: 1;
 }
 
 .filmkep:hover{
@@ -386,9 +448,6 @@ ul{
 }
 }
 
-
-
-
 .toggle-container {
     width: 35px;
     height: 35px;
@@ -473,8 +532,32 @@ ul{
     margin-left: 0px !important;
 }
 
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+
+
+
 .categ{
     padding-right: 20px;
+    position: relative;
 }
 
 @media (max-width: 992px) {
@@ -497,8 +580,8 @@ ul{
     position: relative;
     text-align: center;
     width: 550px;
-    padding-top: 5%;
-    padding-right: 2%;
+    margin-top: 5%;
+    margin-right: 2%;
     border-radius: 5px;
     filter: drop-shadow(0px 0px 5px #03A4FE);
 }
@@ -510,8 +593,9 @@ ul{
 .films{
     position: relative;
     text-align: center;
-    padding-top: 5%;
-    padding-right: 2%;
+}
+.slider-for{
+    padding: 10px;
 }
 
 .films:hover{
@@ -529,7 +613,9 @@ ul{
     text-shadow: 2px 1px black;
 }
 
-
+.yourclass{
+    position: relative;
+}
 
 @media only screen and (max-width: 992px ) {
 
@@ -537,3 +623,4 @@ ul{
         float:left;
     }
 }
+

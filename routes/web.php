@@ -13,5 +13,13 @@ Route::get('/logout', [UserController::class, 'Logout']);
 Route::get('/movie',[UserController::class, 'Movie']);
 Route::post('/movie', [UserController::class,'MovieData']);
 
-Route::get('/celebrity',[UserController::class, 'Celebrity']);
-Route::post('/celebrity', [UserController::class,'CelebrityData']);
+Route::get('/actor',[UserController::class, 'Actor']);
+Route::post('/actor', [UserController::class,'ActorData']);
+
+Route::get('/category',[UserController::class, 'Categ']);
+Route::post('/category', [UserController::class,'CategData']);
+
+Route::get('/profil',[UserController::class, 'Profil']);
+
+Route::get('/profilmodositas',[UserController::class, 'Mod']);
+Route::post('/profilmodositas',[UserController::class, 'ProfilMod']);

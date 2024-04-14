@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="{{asset('assets/img/logok/logo.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('slick-1.8.1/slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('slick-1.8.1/slick/slick-theme.css')}}"/>
 </head>
 <body>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -20,7 +22,7 @@
                     <i type="button" class="close bi bi-x" data-bs-dismiss="modal" aria-label="Close"></i>
                 </div>
                 <div class="modal-body">
-                    <form action="/" method="POST">
+                    <form method="POST">
                         @csrf
                         <div>
                             <label for="email" class="form-label">Email:</label>
@@ -59,7 +61,7 @@
                         </div>
                         <div class="mt-2">
                             <label for="age" class="form-label">Age:</label>
-                            <input type="number" name="age" min="1" max="111" maxlength="2" class="form-control" value="{{old('kor')}}">
+                            <input type="number" name="age" min="1" max="111" maxlength="2" class="form-control" value="{{old('age')}}">
                             @error('age')
                                 <p class="text-danger pt-2"><b>{{$message}}</b></p>
                             @enderror
@@ -79,7 +81,8 @@
             </div>
         </div>
     </div>
- <div id="background">
+
+ <div id="@yield('bg')" style="background-image: url(@yield('bg-name'))">
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary container">
             <div class="container-fluid">
@@ -109,7 +112,7 @@
                         </div>
                         <div class="container">
                             <li class="nav-item">
-                                <a class="celebrities" href="/celebrity">CELEBRITIES</a>
+                                <a class="celebrities" href="/actor">ACTORS</a>
                             </li>
                         </div>
                         <div class="container">
@@ -119,15 +122,10 @@
                         </div>
                     </ul>
                     <ul class="navbar-nav ms-auto navmobil">
-                        <div class="container">
-                            <li class="nav-item">
-                                <a class="help nav-link" href="/help">HELP</a>
-                            </li>
-                        </div>
                         @guest
                             <div class="container">
                                 <li class="nav-item">
-                                    <a class="signin nav-link" href="/signin">Login</a>
+                                    <a class="signin nav-link" href="/login">Login</a>
                                 </li>
                             </div>
                             <div class="container">
@@ -140,7 +138,14 @@
                         @else
                         <div class="container">
                             <li class="nav-item">
-                                <a href="/logout" class="btn btn-singup px-3">Logout</a>
+                                <a class="celebrities" href="/profil">Profil</a>
+                            </li>
+                        </div>
+                        <div class="container">
+                            <li class="nav-item">
+                                <button class="btn btn-singup px-3">
+                                    <a class="logout" href="/logout">Logout</a>
+                                </button>
                             </li>
                         </div>
                         @endguest
@@ -152,29 +157,27 @@
     @yield('content')
  </div>
     @yield('content2')
-</body>
 
-<footer class="footer">
-    <div class="container">
+    <footer class="footer">
+        <div class="container">
      <div class="row">
        <div class="footer-col">
          <ul>
             <a class="logo navbar-brand" href="/">
-                <img class="logoka pb-3" src="{{asset("assets/img/logok/logo.png")}}">
+                <img class="logoka pb-3" src="{{asset('assets/img/logok/logo.png')}}">
             </a>
-           <li>Budapest, Üteg u. 15, 1139</li>
-           <li>Call us: 06(12)345 6789</li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>About us</h4>
-         <div class="social-links">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-         </div>
-       </div>
-     </div>
+            <li>Budapest, Üteg u. 15, 1139</li>
+            <li>Call us: 06(12)345 6789</li>
+        </ul>
     </div>
- </footer>
-
+    <div class="footer-col">
+        <h4>About us</h4>
+    </div>
+</div>
+</div>
+</footer><script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{asset('slick-1.8.1/slick/slick.min.js')}}"></script>
+<script src="{{asset('assets/js/myslick.js')}}"></script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 @extends('layout')
 @section('bg','background1')
 @section('content')
-<!--vágás-->
 <div class="container pb-2">
     <h1 class="text-center display-6 pt-3 pb-1">Galéria</h1>
     <hr class="w-50 mx-auto">
@@ -24,7 +23,5 @@
           <img src="{{asset('assets/img/galeria/onepiece.png')}}">
         </div>
     </div>
-
 </div>
-<!--vágás-->
 @endsection

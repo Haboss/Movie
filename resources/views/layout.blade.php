@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/mystyle.css")}}">
     <link rel="shortcut icon" href="{{asset('assets/img/logok/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('slick-1.8.1/slick/slick.css')}}"/>
@@ -81,7 +82,6 @@
             </div>
         </div>
     </div>
-
     <div id="@yield('bg')" style="background-image: url(@yield('bg-name'))">
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary container">
@@ -133,13 +133,13 @@
                             @else
                             <div class="container">
                                 <li class="nav-item">
-                                    <a class="celebrities" href="/profil">Profil</a>
+                                    <a class="celebrities" href="/logout">Logout</a>
                                 </li>
                             </div>
                             <div class="container">
                                 <li class="nav-item">
                                     <button class="btn btn-singup px-3">
-                                        <a class="logout" href="/logout">Logout</a>
+                                        <a class="logout" href="/profil">Profile</a>
                                     </button>
                                 </li>
                             </div>

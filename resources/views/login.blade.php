@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-<!--vágás-->
 <div class="d-felx justify-content-center center pt-5">
     <h1 class="text-center display-6 pt-3 pb-1 fw-bold">Login</h1>
     <div class="login pb-2 w-25 mx-auto">
@@ -33,5 +32,4 @@
         </div>
     </div>
 </div>
-<!--vágás-->
 @endsection

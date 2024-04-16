@@ -2,11 +2,10 @@
 @section('content')
 @section('bg','background1')
 @section('bg-name', asset('assets/img/hatterek/'.$hatter.'.png'))
-<!--vagas-->
 <main class="border-dark">
     <section class="py-4 px-2">
         <div class="d-felx justify-content-center center pt-5">
-            <h1 class="text-center display-6 pt-3 pb-1 fw-bold">Edit Profile</h1>
+            <h1 class="profilka text-center display-6 pt-3 pb-1 fw-bold">Edit Profile</h1>
             <div class="login pb-2 w-25 mx-auto">
                 <hr class="w-100 mx-auto">
                 <div class="modal-content">
@@ -14,6 +13,11 @@
                         <form method="post" action="/profilmodositas">
                             @csrf
                             @foreach ($result as $row)
+                            <div class="modal-header iksz w-100 d-flex justify-content-end position-static">
+                                <a href="/profil">
+                                    <i type="button" class="close bi bi-x" data-bs-dismiss="modal" aria-label="Close"></i>
+                                </a>
+                            </div>
                                 <div class="mt-3 col-8 mx-auto">
                                     <label for="name" class="form-label fs-6">Name:</label>
                                     <input id="name" type="text" name="name" class="form-control" value="{{$row->name}}">
@@ -47,5 +51,4 @@
         </div>
     </section>
 </main>
-<!--vagas-->
 @endsection

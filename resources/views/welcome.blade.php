@@ -44,7 +44,6 @@
                         @foreach ($filmek as $film)
                         <div class="filmek cols">
                             <img class="filmkep img-fluid" src="{{asset("assets/img/movies/film$film->filmid.png")}}">
-                            <a href="">
                                 <div class="filmkep_overlay">
                                     <div>
                                         <div class="filmkep_cim">{{ $film->movietitle }}</div>
@@ -53,7 +52,6 @@
                                         </p>
                                     </div>
                                 </div>
-                            </a>
                         </div>
                         @endforeach
                     </div>

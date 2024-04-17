@@ -8,13 +8,13 @@
 @endsection
 @section('content2')
 <section id="movies" class="text-center mx-4 mb-5">
-    <h1 class="pt-5 text-center mt-5 fw-bold">Movies</h1>
+    <h1 class="pt-5 text-center mt-5 fw-bold">{{$kategoria != null ? $kategoria->categoryname : ""}} Movies</h1>
     <div class="col-1 pt-5 ms-5">
         <label class="pb-3">Choose a Category:</label>
         <select class="form-control form-control-lg" onchange="location = this.value;">
-            <option value="">All</option>
-            @foreach($kategoria as $category)
-                <option value="/category/{{$category->categoryid}}">{{$category->categoryname}}</option>
+            <option value="/movie">All</option>
+            @foreach($kategoriak as $category)
+                <option value="/category/{{$category->categoryid}}" {{$kategoria != null && $category->categoryid == $kategoria->categoryid ? "selected" : ""}}>{{$category->categoryname}}</option>
             @endforeach
           </select>
     </div>

@@ -158,14 +158,11 @@ class UserController extends Controller
             ->where('filmadatok.filmid', $id)
             ->first(),
             'kategoria' => kategoriaModel::all(),
-            'actors' => actorsModel::all(),
-            'actormovie' => actormovieModel::all(),
-            'actors' => actorsModel::select('szineszek.actorid','szineszek.actorname','szineszek.gender','szineszek.link')
-            ->join('actors', 'actors.szerepid1', '=', 'filmadatok.filmid'),
-            'actormovie' => actormovieModel::all()
-            ->join('actors', 'actors.actorid', '=', 'actormovie.actorid')
-            ->join('actormovie', 'actormovie.filmid', '=', 'filmadatok.filmid')
-            ->where('actormovie.filmid', $id)
+            'actormovie' => actormovieModel::select('szineszek_filmekben.actorid','szineszek_filmekben.filmid', 'szineszek.actorname', "szineszek.link")
+            ->join('szineszek', 'szineszek.actorid', '=', 'szineszek_filmekben.actorid')
+            ->join('filmadatok', 'filmadatok.filmid', '=', 'szineszek_filmekben.filmid')
+            ->where('szineszek_filmekben.filmid', $id)
+            ->get()
             // 'kateg' => kategoriaModel::select('categoryid','categoryname')
             // ->where('categoryid',Auth::user()->id)
             // ->get(),
@@ -181,7 +178,8 @@ class UserController extends Controller
             ->where('kategoria.categoryid', "=", $id)
             ->orderBy('filmadatok.date','desc')
             ->get(),
-            'kategoria' => kategoriaModel::all(),
+            'kategoria' => kategoriaModel::where('categoryid', $id)->first(),
+            'kategoriak' => kategoriaModel::all(),
             'id' => $id
         ]);
     }
@@ -191,7 +189,8 @@ class UserController extends Controller
             ->join('kategoria', 'kategoria.categoryid', '=', 'filmadatok.categoryid')
             ->orderBy('filmadatok.date','desc')
             ->get(),
-            'kategoria' => kategoriaModel::all()
+            'kategoria' => null,
+            'kategoriak' => kategoriaModel::all()
             // 'kateg' => kategoriaModel::select('categoryid','categoryname')
             // ->where('categoryid',Auth::user()->id)
             // ->get(),

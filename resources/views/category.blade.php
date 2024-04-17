@@ -14,11 +14,7 @@
         <select class="form-control form-control-lg" onchange="location = this.value;">
             <option value="">All</option>
             @foreach($kategoria as $category)
-                <option value="/category/{{$category->categoryid}}">{{$category->categoryname}}
-                        {{-- @if ($category->categoryid == $id)
-                            {{ $category->categoryname }}
-                        @endif --}}
-                </option>
+                <option value="/category/{{$category->categoryid}}">{{$category->categoryname}}</option>
             @endforeach
           </select>
     </div>

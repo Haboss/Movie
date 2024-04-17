@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 use App\Models\felhasznaloModel;
+use App\Models\actormovieModel;
 use App\Models\filmadatokModel;
 use App\Models\kategoriaModel;
 use App\Models\hatterekModel;
@@ -150,27 +151,21 @@ class UserController extends Controller
         ]);
     }
     // Filmek
-    public function Category(){
-        return view('category',[
-            'filmek' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.categoryid','kategoria.categoryname')
-            ->join('kategoria', 'kategoria.categoryid', '=', 'filmadatok.categoryid')
-            ->orderBy('filmadatok.date','desc')
-            ->get(),
-            'kategoria' => kategoriaModel::all(),
-            // 'kateg' => kategoriaModel::select('categoryid','categoryname')
-            // ->where('categoryid',Auth::user()->id)
-            // ->get(),
-            // ->select($category.$category from $filmadatok, $category)
-            // ->where($category.$categoryid=$filmadatok.$categoryid)
-        ]);
-    }
     public function MovieId($id){
         return view('movie',[
-            'film' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.categoryid','kategoria.categoryname')
+            'film' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.link','filmadatok.categoryid','kategoria.categoryname')
             ->join('kategoria', 'kategoria.categoryid', '=', 'filmadatok.categoryid')
             ->where('filmadatok.filmid', $id)
             ->first(),
             'kategoria' => kategoriaModel::all(),
+            'actors' => actorsModel::all(),
+            'actormovie' => actormovieModel::all(),
+            'actors' => actorsModel::select('szineszek.actorid','szineszek.actorname','szineszek.gender','szineszek.link')
+            ->join('actors', 'actors.szerepid1', '=', 'filmadatok.filmid'),
+            'actormovie' => actormovieModel::all()
+            ->join('actors', 'actors.actorid', '=', 'actormovie.actorid')
+            ->join('actormovie', 'actormovie.filmid', '=', 'filmadatok.filmid')
+            ->where('actormovie.filmid', $id)
             // 'kateg' => kategoriaModel::select('categoryid','categoryname')
             // ->where('categoryid',Auth::user()->id)
             // ->get(),
@@ -178,9 +173,10 @@ class UserController extends Controller
             // ->where($category.$categoryid=$filmadatok.$categoryid)
         ]);
     }
+    // Kategóriák
     public function CategoryId($id){
         return view('category',[
-        'filmek' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.categoryid','kategoria.categoryname')
+            'filmek' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.link','filmadatok.categoryid','kategoria.categoryname')
             ->join('kategoria', 'kategoria.categoryid', '=', 'filmadatok.categoryid')
             ->where('kategoria.categoryid', "=", $id)
             ->orderBy('filmadatok.date','desc')
@@ -189,7 +185,26 @@ class UserController extends Controller
             'id' => $id
         ]);
     }
-
+    public function Category(){
+        return view('category',[
+            'filmek' => filmadatokModel::select('filmadatok.filmid','filmadatok.movietitle','filmadatok.movielength','filmadatok.date','filmadatok.categoryid','kategoria.categoryname')
+            ->join('kategoria', 'kategoria.categoryid', '=', 'filmadatok.categoryid')
+            ->orderBy('filmadatok.date','desc')
+            ->get(),
+            'kategoria' => kategoriaModel::all()
+            // 'kateg' => kategoriaModel::select('categoryid','categoryname')
+            // ->where('categoryid',Auth::user()->id)
+            // ->get(),
+            // ->select($category.$category from $filmadatok, $category)
+            // ->where($category.$categoryid=$filmadatok.$categoryid)
+        ]);
+    }
+    public function Categ(){
+        return view('category',[
+        'kategoria' => kategoriaModel::all(),
+        'id' => $categoryid
+        ]);
+    }
     // Színészek
     public function Actor(){
         return view('actor',[

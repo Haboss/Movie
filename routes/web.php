@@ -19,10 +19,10 @@ Route::post('/profilmodositas',[UserController::class, 'ProfilMod']);
 Route::get('/movie',[UserController::class, 'Category']);
 Route::post('/movie', [UserController::class,'MovieData']);
 Route::get('/movie/{id}', [UserController::class,'MovieId']);
-Route::get('/category/{id}',[UserController::class, 'CategoryId']);
 // Színészek
 Route::get('/actor',[UserController::class, 'Actor']);
 Route::post('/actor', [UserController::class,'ActorData']);
 // Kategória
 Route::get('/category',[UserController::class, 'Categ']);
 Route::post('/category', [UserController::class,'CategData']);
+Route::get('/category/{id}',[UserController::class, 'CategoryId']);

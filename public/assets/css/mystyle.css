@@ -152,6 +152,12 @@ body {
     min-height: 100dvh;
 }
 
+.cim{
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(0px 0px 10px #03A4FE);
+}
+
 .category{
     filter: brightness(0.5);
     border-radius: 25px;
@@ -183,6 +189,16 @@ body {
 div label{
     color: white;
     text-shadow: 1px 1px #03A4FE;
+}
+
+.datum{
+    font-size: 20px;
+    color: white;
+    filter: drop-shadow(0px 0px 10px #03A4FE);
+}
+
+.elozetes{
+    border-radius: 20px;
 }
 
 .fa-solid {
@@ -388,6 +404,12 @@ input:-webkit-autofill:active{
 .iksz{
     position: relative;
     left: 300px;
+}
+
+.kategoria{
+    font-size: 30px;
+    color: white;
+    filter: drop-shadow(0px 0px 10px #03A4FE);
 }
 
 .kereses{
@@ -620,6 +642,13 @@ nav .btn-singup:active{
 #search::placeholder{
     color: #2c2c2c;
     font-weight: bold;
+}
+
+.szereplok{
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(0px 0px 10px #03A4FE);
+    padding-top: 40px
 }
 
 .slider-for{

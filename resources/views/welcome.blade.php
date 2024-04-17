@@ -17,16 +17,17 @@
             <div class="sldr">
                 @foreach($kategoria as $category)
                     <div class="films slider-for">
-                        <a href="movie/{{$category->categoryid}}">
+                        <a href="category/{{$category->categoryid}}">
                             <img class="img-fluid category h-100" src="{{asset("assets/img/category/category$category->categoryid.png")}}">
                             <span class="overlay-text">{{$category->categoryname}}</span>
                         </a>
                     </div>
                 @endforeach
                 <div class="films slider-for">
-                    <!--<a href="/movie">-->
-                    <img class="img-fluid category h-100" src="{{asset("assets/img/category/others.png")}}">
-                    <span class="overlay-text">Others+</span>
+                    <a href="/category">
+                        <img class="img-fluid category h-100" src="{{asset("assets/img/category/others.png")}}">
+                        <span class="overlay-text">Others+</span>
+                    </a>
                 </div>
             </div>
         </div>

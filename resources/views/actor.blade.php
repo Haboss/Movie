@@ -9,10 +9,10 @@
 @endsection
 <section id="celebrity" class="text-center mx-4 mb-5">
 <div class="text-center d-flex justify-content-center">
-    <div class="col-4 d-flex flex-column">
+    <div class="row">
         <h1 class="pt-5 fw-bold">Actors</h1>
         @foreach ($actors as $actor)
-        <div class="my-2">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-3 my-2">
             <a href="{{ $actor->link }}" target="_blank" class="actors">
                 <div class="p-2 row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
                     <div class="cols">
@@ -26,6 +26,11 @@
         </div>
         @endforeach
     </div>
+</div>
+<div>
+    <a href="/actor">
+        <button class="topgomb d-flex align-items-center fs-3 justify-content-center p-4 bi bi-arrow-up-short"></button>
+    </a>
 </div>
 </section>
 @endsection

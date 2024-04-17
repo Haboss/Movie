@@ -67,6 +67,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.bela{
+    padding: 10px;
+}
+
 .buttons{
     display: flex;
     justify-content: space-between;
@@ -82,6 +86,29 @@ body{
     z-index: -1;
     background-color: black;
     border-radius: 5px;
+}
+
+.btn-registerke{
+    color: #03A4FE;
+    text-decoration: none;
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+.btn-registerke:hover{
+    border-radius: 15px;
+    transition: 0.3s;
+    background-size: 400% 400%;
+    border-radius: 5px;
+    background-color: #0F1414 !important;
+    color: white !important;
+    z-index: 1;
+    cursor: pointer;
+    border: none;
+    outline: linear-gradient(180deg, #03a4fe, #ffffff) !important;
+    position: relative;
+    -o-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
 }
 
 .btn-register {
@@ -420,6 +447,16 @@ label{
     font-weight: bold;
 }
 
+.laci{
+    border: 5px solid #03A4FE;
+    border-radius: 5px !important;
+}
+
+.laci:hover{
+    filter: drop-shadow(0px 0px 5px #ffffff);
+    padding: 10px;
+}
+
 .logo:hover{
     filter: drop-shadow(0px 0px 3px #ffffff);
 }
@@ -648,7 +685,27 @@ nav .btn-singup:active{
     font-size: 40px;
     color: white;
     filter: drop-shadow(0px 0px 10px #03A4FE);
-    padding-top: 40px
+    padding-top: 10px
+}
+
+.send{
+    color: #ffffff;
+    background-color: #00000000;
+    border-color: #00000000;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.send:hover{
+    border-color: white;
+    border-radius: 3px;
+    color: #35ff64;
+    filter: drop-shadow(0px 0px 1px #35ff64);
 }
 
 .slider-for{
@@ -657,6 +714,17 @@ nav .btn-singup:active{
 
 .search{
     padding-top: 5%;
+}
+
+.topgomb{
+    border-radius: 50px;
+    color: white;
+    background-color: #03A4FE;
+    border: #03A4FE;
+}
+
+.topgomb:hover{
+    filter: drop-shadow(0px 0px 100px #ffffff);
 }
 
 .toggle-container {
@@ -727,3 +795,64 @@ ul{
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.card {
+    border: none;
+    box-shadow: 5px 6px 6px 2px #3d3d3d;
+    border-radius: 4px;
+}
+
+.dots{
+    height: 4px;
+    width: 4px;
+    margin-bottom: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.badge{
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img{
+    margin-top: 4px;
+}
+
+.check-icon{
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px;
+}
+
+.form-check-input{
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer;
+}
+
+.form-check-input:focus{
+    box-shadow: none;
+}
+
+.icons i{
+    margin-left: 8px;
+}
+
+.reply{
+    margin-left: 12px;
+}
+
+.reply small{
+    color: #b7b4b4;
+}
+
+.reply small:hover{
+    color: green;
+    cursor: pointer;
+}

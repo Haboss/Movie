@@ -15,10 +15,14 @@ Route::get('/profil',[UserController::class, 'Profil']);
 // Profil módosítása
 Route::get('/profilmodositas',[UserController::class, 'Mod']);
 Route::post('/profilmodositas',[UserController::class, 'ProfilMod']);
+Route::get('/profilhattermod',[UserController::class, 'ProfilHatterMod']);
+Route::get('/profil/hatter/{id}',[UserController::class, 'HatterMod']);
 // Filmek
 Route::get('/movie',[UserController::class, 'Category']);
 Route::post('/movie', [UserController::class,'MovieData']);
 Route::get('/movie/{id}', [UserController::class,'MovieId']);
+// Vélemények
+Route::post('/comment/{id}', [UserController::class,'Opinion']);
 // Színészek
 Route::get('/actor',[UserController::class, 'Actor']);
 Route::post('/actor', [UserController::class,'ActorData']);

@@ -23,7 +23,7 @@
                     <i type="button" class="close bi bi-x" data-bs-dismiss="modal" aria-label="Close"></i>
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form action="/" method="POST">
                         @csrf
                         <div>
                             <label for="email" class="form-label">Email:</label>
@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="container">
                                     <li class="nav-item">
-                                        <button class="btn btn-singup px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">SIGN UP
+                                        <button class="btn btn-singup px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Register
                                             <i class="bi bi-person-circle"></i>
                                         </button>
                                     </li>

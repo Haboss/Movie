@@ -66,7 +66,7 @@
             <div class="d-grid gap-2 d-md-block pt-4 mb-4">
                 <div class="buttons">
                     <a href="/profilmodositas" class="btn btn-profil px-4 py-3 fs-6 fw-bold">Edit Profile</a>
-                    <a href="/hattermodositas" class="btn btn-profil px-4 py-3 fs-6 fw-bold">Edit Background</a>
+                    <a href="/profilhattermod" class="btn btn-profil px-4 py-3 fs-6 fw-bold">Edit Background</a>
                 </div>
             </div>
         </form>

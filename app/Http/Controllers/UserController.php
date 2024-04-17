@@ -10,6 +10,7 @@ use App\Models\felhasznaloModel;
 use App\Models\actormovieModel;
 use App\Models\filmadatokModel;
 use App\Models\kategoriaModel;
+use App\Models\ertekelesModel;
 use App\Models\hatterekModel;
 use App\Models\actorsModel;
 use Illuminate\Http\Request;
@@ -126,17 +127,30 @@ class UserController extends Controller
                                                     ->numbers()],
             'age'                   => 'required|numeric|min:18'
         ],[
-            'name.required'                  => 'Név mező nem lehet üres!',
-            'password.required'              => 'Jelszó mező nem lehet üres!',
-            'password.min'                   => 'Minimum 8 karakter legyen a jelszó!',
-            'password.letters'               => 'A jelszó tartalmazzon betüt!',
-            'password.mixedCase'             => 'A jelszó tartalmozzon kis és nagy betűt!',
-            'age'                            => 'Kor mező nem lehet üres!',
-            'age.numeric'                    => 'A kor szám lehet!',
-            'age.min'                        => 'Regisztráció csak 18 év felett!'
+            'name.required'                  => 'The name field cannot be empty!',
+            'password.required'              => 'The password field cannot be empty!',
+            'password.min'                   => 'The password must be at least 8 characters!',
+            'password.letters'               => 'The password must contain letters!',
+            'password.mixedCase'             => 'The password must contain uppercase and lowercase letters.',
+            'age'                            => 'The age field cannot be empty!',
+            'age.numeric'                    => 'Age is just a number!',
+            'age.min'                        => 'Registration only for over 18s!'
         ]);
         felhasznaloModel::where('id', Auth::user()->id)->update(['name'=>$request->name, 'password'=>Hash::make($request->password), 'age'=>$request->age]);
         return redirect('/profil');
+    }
+    public function ProfilHatterMod(Request $request){
+        return view('profilhattermod',[
+            'hatterek' => hatterekModel::all()
+        ]);
+    }
+    public function HatterMod($id){
+
+        $data = felhasznaloModel::where('id',Auth::user()->id)->first();
+        $data-> hatterid = $id;
+        $data->save();
+        return redirect('/profil');
+
     }
     // Háttér
     public function Mod(){
@@ -162,6 +176,10 @@ class UserController extends Controller
             ->join('szineszek', 'szineszek.actorid', '=', 'szineszek_filmekben.actorid')
             ->join('filmadatok', 'filmadatok.filmid', '=', 'szineszek_filmekben.filmid')
             ->where('szineszek_filmekben.filmid', $id)
+            ->get(),
+            'ertekelesek' => ertekelesModel::select('ertekeles.filmid','felhasznalo.username', 'ertekeles.velemeny', 'ertekeles.csillag')
+            ->join('felhasznalo', 'felhasznalo.id', '=', 'ertekeles.userid')
+            ->where('filmid',$id)
             ->get()
             // 'kateg' => kategoriaModel::select('categoryid','categoryname')
             // ->where('categoryid',Auth::user()->id)
@@ -170,6 +188,21 @@ class UserController extends Controller
             // ->where($category.$categoryid=$filmadatok.$categoryid)
         ]);
     }
+    // Vélemények
+    public function Opinion(Request $request, $id){
+        $request->validate([
+            'msg'          => 'required|min:5|max:200'
+        ],[
+            'msg.required' => 'The opinion field cannot be empty!',
+        ]);
+            $data = new ertekelesModel();
+            $data -> csillag = $request -> star;
+            $data -> velemeny = $request -> msg;
+            $data -> userid = Auth::user()->id;
+            $data -> filmid = $id;
+            $data->save();
+            return redirect('/movie/'.$id);
+        }
     // Kategóriák
     public function CategoryId($id){
         return view('category',[
